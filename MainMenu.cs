@@ -41,7 +41,7 @@ namespace Camera_Rental_Management
                 try
                 {
                     Con.Open();
-                    string query = "insert into camRentalTbl values('" + IdTB.Text + "','" + IdTypeCb.SelectedItem.ToString() + "', '" + NameTb.Text + "', '" + AddressTb.Text + "', '" + PhoneTb.Text + "', " + RegNoTb.Text + ", '" + MerkTb.Text + "','" + ModelTb.Text + "','" + PriceTb.Text + "', '" + DaysTb.Text + "', '" + RentFeeTb.Text +"')";
+                    String query = "insert into camRentalTbl values('" + IdTB.Text + "','" + IdTypeCb.SelectedItem.ToString() + "', '" + NameTb.Text + "', '" + AddressTb.Text + "', '" + PhoneTb.Text + "', " + RegNoTb.Text + ", '" + MerkTb.Text + "','" + ModelTb.Text + "','" + PriceTb.Text + "', '" + DaysTb.Text + "', '" + RentFeeTb.Text +"')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Informasi sukses ditambahkan");
@@ -84,7 +84,7 @@ namespace Camera_Rental_Management
                 try
                 {
                     Con.Open();
-                    string query = "update camRentalTbl set ID= '" + IdTB.Text + "', [Id Type]= '" + IdTypeCb.SelectedItem.ToString() + "',Name= '" + NameTb.Text + "',Address= '" + AddressTb.Text + "', Phone= '" + PhoneTb.Text + "', Merk= '" + MerkTb.Text + "',Model= '" + ModelTb.Text + "',Price= '" + PriceTb.Text + "', Days= '" + DaysTb.Text + "', [Rent Fee]= '" + RentFeeTb.Text + "' where RegNo= '" + RegNoTb.Text + "';";
+                    String query = "update camRentalTbl set [Id Type]= '" + IdTypeCb.SelectedItem.ToString() + "',Name= '" + NameTb.Text + "',Address= '" + AddressTb.Text + "', Phone= '" + PhoneTb.Text + "', RegNo= '" + RegNoTb.Text + "', Merk= '" + MerkTb.Text + "',Model= '" + ModelTb.Text + "',Price= '" + PriceTb.Text + "', Days= '" + DaysTb.Text + "', [Rent Fee]= '" + RentFeeTb.Text + "' where Id= " + IdTB.Text + ";";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Informasi sukses diedit");
